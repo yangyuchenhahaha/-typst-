@@ -1,5 +1,4 @@
 #import "lib.typ": *
-
 #show: bubble.with(
     title: "Bubble template",
     subtitle: "Simple and colorful template",
@@ -18,11 +17,21 @@
 = Introduction
 
 This is a simple template that can be used for a report.
+#codly(header: [hello.cpp])
+```cpp
+#include <iostream>
+using namespace std;
+int main(){
+    cout<<"hello world!";
+}
+```
+
+
 
 = Features
 == Colorful items
 
-The main color can be set with the `main-color` property, which affects inline code, lists, links and important items. For example, the words highlight and important are highlighted !这就是对的吗？
+The main color can be set with the `main-color` property, which affects inline code, lists, links and important items. For example, the words highlight and important are highlighted !
 
 - These bullet
 - points
@@ -41,6 +50,9 @@ fn main() {
 }
 ```)<ref>
 
+
+#lorem(300)
+
 #pagebreak()
 
 = Enjoy !
@@ -48,10 +60,7 @@ fn main() {
 #lorem(100)
 
 = 中文字体测试
-以下是中文测试的样例。
-$
-    (a+b)^2 = a^2+2 a b+b^2
-$
+以下是中文测试
 
 $
     (a+b)^2 = a^2+2 a b+b^2

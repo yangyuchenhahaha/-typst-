@@ -1,3 +1,5 @@
+#import "@preview/codly:1.3.0": codly, codly-init
+
 // main project
 #let bubble(
     title: "",
@@ -32,23 +34,68 @@
     //customize look of figure
     set figure.caption(separator: [ --- ], position: top)
 
+    let code-languages = (
+        bash: (name: "Bash", icon: "", color: primary-color),
+        c: (name: "C", icon: "", color: primary-color),
+        cpp: (name: "C++", icon: "", color: primary-color),
+        csharp: (name: "C#", icon: "", color: primary-color),
+        cs: (name: "C#", icon: "", color: primary-color),
+        css: (name: "CSS", icon: "", color: primary-color),
+        go: (name: "Go", icon: "", color: primary-color),
+        html: (name: "HTML", icon: "", color: primary-color),
+        java: (name: "Java", icon: "", color: primary-color),
+        javascript: (name: "JavaScript", icon: "", color: primary-color),
+        js: (name: "JavaScript", icon: "", color: primary-color),
+        json: (name: "JSON", icon: "", color: primary-color),
+        kotlin: (name: "Kotlin", icon: "", color: primary-color),
+        kt: (name: "Kotlin", icon: "", color: primary-color),
+        markdown: (name: "Markdown", icon: "", color: primary-color),
+        md: (name: "Markdown", icon: "", color: primary-color),
+        php: (name: "PHP", icon: "", color: primary-color),
+        py: (name: "Python", icon: "", color: primary-color),
+        python: (name: "Python", icon: "", color: primary-color),
+        rust: (name: "Rust", icon: "", color: primary-color),
+        rs: (name: "Rust", icon: "", color: primary-color),
+        shell: (name: "Shell", icon: "", color: primary-color),
+        sh: (name: "Shell", icon: "", color: primary-color),
+        sql: (name: "SQL", icon: "", color: primary-color),
+        swift: (name: "Swift", icon: "", color: primary-color),
+        toml: (name: "TOML", icon: "", color: primary-color),
+        typ: (name: "Typst", icon: "", color: primary-color),
+        typescript: (name: "TypeScript", icon: "", color: primary-color),
+        ts: (name: "TypeScript", icon: "", color: primary-color),
+        xml: (name: "XML", icon: "", color: primary-color),
+        yaml: (name: "YAML", icon: "", color: primary-color),
+        yml: (name: "YAML", icon: "", color: primary-color),
+    )
+
     //customize code font and raw code
     show raw: set text(font: code-font, size: 0.92em)
-    show raw.where(block: true): set text(style: "italic")
-    show raw.where(block: true): it => block(
-        fill: primary-color.lighten(95%),
-        inset: 0.9em,
-        radius: 0.25em,
-        width: 100%,
-        it,
+    show raw.line: set text(font: code-font, size: 0.92em)
+    show raw.where(block: false): it => (
+        h(0.25em)
+            + box(
+                fill: primary-color.lighten(92%),
+                inset: (x: 0.25em),
+                outset: (y: 0.15em),
+                radius: 0.15em,
+                it,
+            )
+            + h(0.25em)
     )
-    show raw.where(block: false): it => h(0.25em) + box(
-        fill: primary-color.lighten(92%),
-        inset: (x: 0.25em),
-        outset: (y: 0.15em),
-        radius: 0.15em,
-        it,
-    ) + h(0.25em)
+
+    show: codly-init.with()
+    codly(
+        languages: code-languages,
+        default-color: primary-color,
+        fill: primary-color.lighten(97%),
+        zebra-fill: primary-color.lighten(94%),
+        stroke: 0.6pt + primary-color.lighten(65%),
+        radius: 0.25em,
+        display-icon: false,
+        header-transform: it => text(fill: rgb("0E419C"),weight: 700, it),
+        number-format: n => text(size: 0.8em, fill: primary-color.lighten(20%), str(n)),
+    )
 
     // Set body font family.
     set text(font: body-font, lang: "zh", 12pt)
@@ -161,5 +208,5 @@
 #let blockquote = rect.with(stroke: (left: 2.5pt + luma(170)), inset: (left: 1em))
 
 // use primary-color and secondary-color in main
-#let primary-color = rgb("E94845")
+#let primary-color = rgb("0E419C")
 #let secondary-color = rgb(255, 80, 69, 60%)
