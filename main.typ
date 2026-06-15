@@ -33,8 +33,6 @@ The main color can be set with the `main-color` property, which affects inline c
 + numbered lists!
 
 == Customized items
-
-
 Figures are customized but this is settable in the template file. You can of course reference them  : @ref.
 
 #figure(caption: [Code example], ```rust
@@ -51,3 +49,10 @@ fn main() {
 
 = 中文字体测试
 以下是中文测试的样例。
+$
+    (a+b)^2 = a^2+2 a b+b^2
+$
+
+$
+    (a+b)^2 = a^2+2 a b+b^2
+$

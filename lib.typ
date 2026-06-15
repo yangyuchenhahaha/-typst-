@@ -150,6 +150,9 @@
     )
     set par(justify: true, leading: 0.65em)
 
+    //设置数学公式的标号
+    set math.equation(numbering: "(1)", number-align: right)
+
     body
 }
 
