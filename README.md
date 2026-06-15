@@ -1,6 +1,6 @@
 # Bubble Typst Template
 
-这是一个基于 `@preview/bubble:0.2.2` 修改的 Typst 报告模板，已经针对中文排版做了本地化调整。模板入口是 `main.typ`，样式定义在 `lib.typ`。
+这是一个基于 `@preview/bubble:0.2.2` 修改的 Typst 报告模板，可用于复旦大学相关文档模板，并已经针对中文排版做了本地化调整。模板入口是 `main.typ`，样式定义在 `lib.typ`。
 
 ## 文件结构
 
