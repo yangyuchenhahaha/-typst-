@@ -4,6 +4,7 @@
 
 ## 特性
 
+- 开箱即用，可以直接在vscode下载tinymist使用，高度可定制（自行修改lib.typ即可）
 - 适配中文排版，默认正文语言为 `zh`
 - 封面、页眉、标题、列表和链接使用统一主色
 - 一级、二级标题自动编号
@@ -17,7 +18,7 @@
 .
 ├── main.typ   # 文档入口
 ├── lib.typ    # 模板样式
-├── logo.png   # 封面 logo
+├── pics/      # 图片资源目录，统一存放 logo 和正文图片
 ├── main.pdf   # 示例输出
 └── LICENSE
 ```
@@ -53,7 +54,7 @@ Typst Preview: Preview
   class: "Class",
   other: ("Made with Typst", "https://typst.com"),
   main-color: "0E419C",
-  logo: image("logo.png"),
+  logo: image("pics/logo.png"),
 )
 ```
 
@@ -156,6 +157,21 @@ main-color: "0E419C"
 
 ```typst
 logo: none
+```
+
+图片建议统一放在 `pics/` 目录，方便管理和引用。封面 logo 默认使用：
+
+```typst
+logo: image("pics/logo.png")
+```
+
+正文中插入图片也可以使用同一个目录：
+
+```typst
+#figure(
+  image("pics/example.png", width: 80%),
+  caption: [示例图片],
+)
 ```
 
 引用块：

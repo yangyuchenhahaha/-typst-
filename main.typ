@@ -9,7 +9,7 @@
     class: "Class",
     other: ("Made with Typst", "https://typst.com"),
     main-color: "0E419C", //set the main color
-    logo: image("logo.png"), //set the logo
+    logo: image("pics/logo.png"), //set the logo
 )
 
 // Edit this content to your liking
